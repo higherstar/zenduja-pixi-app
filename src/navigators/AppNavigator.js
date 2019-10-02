@@ -7,11 +7,13 @@ import {
 
 import AuthNavigator from './AuthNavigator';
 import HomeNavigator from './HomeNavigator';
+import GameNavigator from './GameNavigator';
 
 
 const SwitchNavigator = createSwitchNavigator({
   Home: HomeNavigator,
   Auth: AuthNavigator,
+  Game: GameNavigator,
 
 });
 
