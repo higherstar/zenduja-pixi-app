@@ -4,7 +4,7 @@ import FlareScreen from '../containers/Game/Screens/FlareScreen';
 import JoinScreen from '../containers/Game/Screens/JoinScreen';
 import ReadyScreen from '../containers/Game/Screens/ReadyScreen';
 import StartScreen from '../containers/Game/Screens/StartScreen';
-import Game from '../containers/Game';
+import Game from '../containers/Game/index';
 
 const GameNavigator = createStackNavigator({
   Game: {

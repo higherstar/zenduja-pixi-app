@@ -18,6 +18,12 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     color: 'white',
   },
+  errorContainer: {
+    backgroundColor: 'orange',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 
