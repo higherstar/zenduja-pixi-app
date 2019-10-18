@@ -1,49 +1,63 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from "react-navigation";
 
-import FlareScreen from '../containers/Game/Screens/FlareScreen';
-import JoinScreen from '../containers/Game/Screens/JoinScreen';
-import ReadyScreen from '../containers/Game/Screens/ReadyScreen';
-import StartScreen from '../containers/Game/Screens/StartScreen';
-import Game from '../containers/Game/index';
+import GameReady from "../containers/Game/GameReady";
+import GameJoin from "../containers/Game/GameJoin";
+import GameCountDown from "../containers/Game/GameCountDown";
+import GameStart from "../containers/Game/GameStart";
+import GameMegaRound from "../containers/Game/page/GameMegaRound";
+import GameNikiRound from "../containers/Game/page/GameNikiRound";
 
 const GameNavigator = createStackNavigator({
-  Game: {
-    screen: Game,
-    navigationOptions: {
-      header: null,
-    },
-  },
+
   GameJoin: {
-    screen: JoinScreen,
+    screen: GameJoin,
     navigationOptions: {
-      title: 'Home',
-      headerStyle: {
-        backgroundColor: '#f4511e',
-      },
-      headerTintColor: '#fff',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
-    },
+      header: null
+    }
   },
   GameReady: {
-    screen: ReadyScreen,
+    screen: GameReady,
     navigationOptions: {
-      header: null,
-    },
-  },
-  GameFlareView: {
-    screen: FlareScreen,
-    navigationOptions: {
-      header: null,
-    },
+      header: null
+    }
   },
   GameStart: {
-    screen: StartScreen,
+    screen: GameStart,
     navigationOptions: {
-      header: null,
-    },
+      header: null
+    }
   },
+  GameCountDown: {
+    screen: GameCountDown,
+    navigationOptions: {
+      header: null
+    }
+  },
+  GameNikiRound: {
+    screen: GameNikiRound,
+    navigationOptions: {
+      header: null
+    }
+  },
+
+  GameMegaRound: {
+    screen: GameMegaRound,
+    navigationOptions: {
+      header: null
+    }
+  }
+
 });
+
+GameNavigator.navigationOptions = ({ navigation }) => {
+  let { routeName } = navigation.state.routes[navigation.state.index];
+  let navigationOptions = {};
+
+  if (routeName === "GameStart") {
+    navigationOptions.tabBarVisible = false;
+  }
+
+  return navigationOptions;
+};
 
 export default GameNavigator;
